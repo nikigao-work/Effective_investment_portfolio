@@ -1,10 +1,53 @@
-# effective-pancake
-Проект "Effective Pancake" состоит из трех этапов и направлен на анализ динамики цен акций 50 компаний за январь 2022 года. Для этого были использованы данные, представленные в файле full_ticker_df_month_01_2022.csv.
+\section*{Effective Investment Portfolio Project}
 
-На первом этапе проекта, в файле Project-1.Stage_1.50assets.kmeans (3).ipynb, был произведен кластерный анализ акций. Была использована библиотека scikit-learn для кластеризации данных методом K-means. Затем были визуализированы полученные результаты с помощью библиотеки matplotlib.
+The \textbf{Effective Investment Portfolio} project aims to develop a diversified and optimized investment portfolio using advanced data-driven methods. This multi-stage approach includes clustering analysis, portfolio optimization, Monte Carlo simulations, and backtesting using Exponentially Weighted Moving Average (EWMA), demonstrating the application of statistical modeling, optimization, and risk assessment techniques to enhance portfolio performance.
 
-На втором этапе, в файле Project-1.Stage_2.50assets.ipynb, были проведены расчеты финансовых показателей для каждой из компаний. Для этого были использованы данные по ценам акций, предоставленные в файле full_ticker_df_month_01_2022.csv. Были рассчитаны такие финансовые показатели, как доходность, среднее значение цены акций и медианное значение цены акций. Результаты были визуализированы с помощью библиотеки matplotlib.
+\subsection*{Key Stages of the Project}
 
-На третьем этапе, в файле Project-1.Stage_3.50assets.ipynb, были построены модели прогнозирования цен акций. Были использованы такие методы, как линейная регрессия, случайный лес и градиентный бустинг. Для оценки качества моделей были использованы метрики R2 score и mean absolute error (MAE).
+\textbf{1. Clustering Analysis}  
+\textit{Objective}: To categorize 50 selected assets based on return profiles and volatility, facilitating diversification.  
+\textit{Methodology}:
+\begin{itemize}
+    \item Applied the K-means clustering algorithm to group assets based on their risk-return characteristics.
+    \item Used the Elbow Method to determine the optimal number of clusters, balancing simplicity and effectiveness.
+    \item Visualized asset clusters with scatter plots, providing insights into inter-group characteristics and relationships.
+\end{itemize}  
+\textit{Outcome}: Identified clusters of assets with similar behaviors, laying the groundwork for diversified portfolio construction by selecting representatives from each cluster.
 
-Документация проекта содержит подробную информацию о каждом из этапов, используемых методах и библиотеках, а также примеры визуализации результатов. Также в документации описаны дополнительные возможности для дальнейшего улучшения проекта.
+\textbf{2. Portfolio Construction and Optimization (Including Monte Carlo Simulation)}  
+\textit{Objective}: To construct and optimize portfolios using representative assets from identified clusters, focusing on balancing risk and maximizing returns.  
+\textit{Methodology}:
+\begin{itemize}
+    \item \textbf{Monte Carlo Simulation}:
+    \begin{itemize}
+        \item Generated thousands of random portfolios with varying allocations to simulate potential risk-return combinations.
+        \item Calculated expected returns, volatility, and the Sharpe ratio for each simulated portfolio to understand the distribution of possible outcomes.
+        \item Visualized the distribution of portfolio outcomes to aid in selecting the optimal portfolio.
+    \end{itemize}
+    \item \textbf{Optimization}:
+    \begin{itemize}
+        \item Applied Modern Portfolio Theory (MPT) principles to identify the efficient frontier, selecting portfolios that maximize expected return for given risk levels.
+        \item Optimized asset weights to maximize the Sharpe ratio, focusing on maximizing risk-adjusted returns.
+    \end{itemize}
+\end{itemize}  
+\textit{Outcome}: Created optimized portfolios leveraging Monte Carlo simulations to validate and enhance the robustness of the optimization process, ensuring comprehensive risk assessment and optimal asset allocation.
+
+\textbf{3. Backtesting with Exponentially Weighted Moving Average (EWMA)}  
+\textit{Objective}: To evaluate the stability and adaptability of the optimized portfolios through historical data simulation.  
+\textit{Methodology}:
+\begin{itemize}
+    \item Implemented backtesting using historical price data to simulate portfolio performance over time.
+    \item Modeled time-varying volatility with EWMA, capturing the dynamic nature of financial markets.
+    \item Analyzed key performance metrics, including cumulative returns, drawdowns, and volatility.
+\end{itemize}  
+\textit{Outcome}: Validated the portfolios' effectiveness, demonstrating consistent performance and adaptability to varying market conditions.
+
+\subsection*{Achieved Results}
+By integrating clustering, Monte Carlo simulations, portfolio optimization, and comprehensive backtesting, the project successfully:
+\begin{itemize}
+    \item Identified asset clusters, facilitating strategic diversification.
+    \item Constructed and optimized portfolios tailored to different risk tolerance levels, using simulations for robust validation.
+    \item Demonstrated portfolio resilience through backtesting, confirming robust and consistent performance.
+\end{itemize}
+
+This approach illustrates a systematic application of data analytics, optimization techniques, and risk management strategies, providing practical insights into investment portfolio design and management.
